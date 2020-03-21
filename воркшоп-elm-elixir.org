@@ -6,6 +6,7 @@
 #+REVEAL_TRANS: none
 #+REVEAL_EXTRA_CSS: воркшоп-elm-elixir.css
 #+REVEAL_PLUGINS: (highlight)
+#+EXPORT_FILE_NAME: index.html
 
 * Elm & Elixir
 - Elm :: a delightful language for reliable webapps
