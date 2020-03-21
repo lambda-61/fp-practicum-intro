@@ -1,5 +1,6 @@
 #+TITLE: Elm & Elixir
 #+OPTIONS: num:nil
+# Author is used as subtitle on the title slide, don't know how to change that
 #+AUTHOR: ФП-Среда
 #+REVEAL_HLEVEL: 2
 #+REVEAL_TRANS: none
