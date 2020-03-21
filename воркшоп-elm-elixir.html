@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Elm &amp; Elixir</title>
+<meta name="author" content="(ФП-Среда)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3/css/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3/css/theme/moon.css" id="theme"/>
+
+<link rel="stylesheet" href="воркшоп-elm-elixir.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@3/lib/css/zenburn.css"/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js@3/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Elm &amp; Elixir</h1><h2 class="author">ФП-Среда</h2><p class="date">Created: 2020-03-21 Sat 11:32</p>
+</section>
+
+<section>
+<section id="slide-orgd295d60">
+<h2 id="orgd295d60">Elm &amp; Elixir</h2>
+<dl>
+<dt>Elm</dt><dd>a delightful language for reliable webapps</dd>
+<dt>Elixir</dt><dd><p>
+a dynamic, functional language designed for building scalable and maintainable applications
+</p>
+<aside class="notes">
+<p>
+Сегодня мы вам расскажем про два языка программирования: elm и elixir
+</p>
+
+</aside></dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-org5fba0b0">
+<h2 id="org5fba0b0">Elm &amp; Elixir</h2>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Elm</th>
+<th scope="col" class="org-left">Elixir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">statically typed</td>
+<td class="org-left">dynamically typed</td>
+</tr>
+
+<tr>
+<td class="org-left">ml-like syntax</td>
+<td class="org-left">ruby-like syntax</td>
+</tr>
+
+<tr>
+<td class="org-left">frontend use</td>
+<td class="org-left">backend use</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>
+На первый взгляд эти языки очень сильно разнятся, но их обьединяет одно:
+функциональное программирование
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orga2c0689">
+<h2 id="orga2c0689">Функциональный стиль</h2>
+<ul>
+<li>Данные</li>
+<li>Вычисления</li>
+<li>Действия</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org9d25b9d">
+<h3 id="org9d25b9d">Функциональное программирование</h3>
+<dl>
+<dt>Данные</dt><dd>неизменяемые факты о событиях внутри или вне системы</dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-org767a243">
+<h3 id="org767a243">Функциональное программирование</h3>
+<dl>
+<dt>Вычисления</dt><dd>функции, результат которых всегда одинаков при одинаковых аргументах и отражается только
+на возвращаемом значении</dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-org0a7ade0">
+<h3 id="org0a7ade0">Функциональное программирование</h3>
+<dl>
+<dt>Действия</dt><dd>взаимодействие с I/O или изменение глобального состояния</dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-org1f176b0">
+<h2 id="org1f176b0">Инструменты для работы с данными</h2>
+<ul>
+<li>Alebraic Data Types</li>
+<li>Pattern Matching</li>
+<li>Иммутабельные структуры данных</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org6b8da6c">
+<h3 id="org6b8da6c">Инструменты для работы с данными</h3>
+<dl>
+<dt>Algebraic Data Types</dt><dd>способ описания типов данных как композицию других
+типов данных</dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-org1615195">
+<h3 id="org1615195">Algebraic Data Types</h3>
+<dl>
+<dt>Product Type</dt><dd><p>
+a.k.a. tuple a.k.a. record
+</p>
+<div class="org-src-container">
+
+<pre><code class="elm" >person =
+    { name: String,
+      age : Int   }
+</code></pre>
+</div></dd>
+<dt>Coproduct (Sum) Type</dt><dd><p>
+a.k.a union
+</p>
+<div class="org-src-container">
+
+<pre><code class="elm" >boolean = True | False
+</code></pre>
+</div></dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-orgba3cad4">
+<h3 id="orgba3cad4">Инструменты для работы с данными</h3>
+<dl>
+<dt>Pattern Matching</dt><dd>a.k.a. switch выражение на стероидах</dd>
+<dt>Destructuring</dt><dd>извлечение данных из ADT со специальным синтаксисом</dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-org3e2dc86">
+<h3 id="org3e2dc86">Pattern Matching</h3>
+<div class="org-src-container">
+
+<pre><code class="elixir" >def fizzbuzz(n) do
+  case {rem(n, 3), rem(n,5)} do
+    {0, 0} -&gt; "FizzBuzz"
+    {0, _} -&gt; "Fizz"
+    {_, 0} -&gt; "Buzz"
+    _ -&gt; n
+  end
+end
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org9af4087">
+<h3 id="org9af4087">Инструменты для работы с данными</h3>
+<dl>
+<dt>Иммутабельные структуры данных</dt><dd>структуры данных, не поддерживающие изменение</dd>
+<dt>Персистентные структуры данных</dt><dd>стурктуры данных, переиспользующие общие
+куски между собой</dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-org942d879">
+<h2 id="org942d879">Инструменты для работы с вычислениями</h2>
+<ul>
+<li>Функции высшего порядка</li>
+<li>Композиция функций</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org9532cd9">
+<h3 id="org9532cd9">Инструменты для работы с вычислениями</h3>
+<dl>
+<dt>Функции высшего порядка</dt><dd>функции как значения - их можно принимать как
+аргументы других функций или возвращать как результат</dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-orga5389a5">
+<h3 id="orga5389a5">Инструменты для работы с вычислениями</h3>
+<dl>
+<dt>Композиция функций</dt><dd><p>
+применение одной функции к результату другой
+</p>
+<div class="org-src-container">
+
+<pre><code class="elm" >f : a -&gt; b
+g : b -&gt; c
+
+h : a -&gt; c
+h x = g (f (x))
+</code></pre>
+</div></dd>
+
+</dl>
+</section>
+</section>
+<section>
+<section id="slide-org346d4a0">
+<h2 id="org346d4a0">Инструменты для работы с действиями</h2>
+<ul>
+<li>Данные</li>
+<li>Вычисления</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgf6ee5e1">
+<h3 id="orgf6ee5e1">Внутри любого действия есть вычисления и данные</h3>
+</section>
+</section>
+<section>
+<section id="slide-org4c6db12">
+<h2 id="org4c6db12">Образ мышления фп</h2>
+<ul>
+<li>Начинайте с модели данных</li>
+<li>Напишите действия</li>
+<li>Выделите логику в чистые функции, протестируйте</li>
+<li>Повторите</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orge6b44bf">
+<h3 id="orge6b44bf">Функциональное вносит простоту</h3>
+<ul>
+<li>Вычисления вместо действий</li>
+<li>Значения вместо переменных</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org78c01cd">
+<h2 id="org78c01cd">Формат практикума</h2>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@3/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@3/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }]
+});
+</script>
+</body>
+</html>

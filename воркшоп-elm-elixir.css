@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,700|Rubik:300&display=swap');
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+.reveal h1 {
+    color: rgb(136,225,242);
+}
+
+.reveal h4, .reveal h5, .reveal dt  {
+    color: rgb(255,208,130);
+}
+
+.reveal .slides {
+    color: rgb(208,225,249);
+}
+
+.reveal h3, .reveal h2 {
+    color: rgb(255,124,124);
+}
+
+.reveal .slides {
+  font-family: Rubik;
+  text-align:left;
+}
+
+.slide-background-content {
+    background-color: rgb(33,36,61);
+}
+
+.reveal table {
+  margin: 0;
+}
+
+.reveal td {
+  margin-right: auto;
+}
+
+.reveal ul {
+    margin-left: 0;
+    padding-left: 0;
+  list-style-type: none;
+  list-style: none;
+}
+
+ul>li:before {
+  content: "👉  ";
+}
